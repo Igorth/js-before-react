@@ -189,11 +189,74 @@
 
 // REDUCE ///////////////////////////////////////////////////////////////
 // Pegar o array e criar uma nova estrutura de base usando o array
-const array = [1, 2, 3, 4, 5, 6];
+// const array = [1, 2, 3, 4, 5, 6];
 
-const sum = array.reduce((acc, item) => {
-  document.body.innerText += acc + ',' + item + ' ---- ';
+// const sum = array.reduce((acc, item) => {
+//   document.body.innerText += acc + ',' + item + ' ---- ';
 
-  return acc + item;
-}, 0);
-document.body.innerText = JSON.stringify(sum);
+//   return acc + item;
+// }, 0);
+// document.body.innerText = JSON.stringify(sum);
+
+////////////////////////////////////////////////////////////////
+
+// PROMISES ///////////////////////////////////////////////////////////
+// .then, .catch
+
+// const sumTwoNumbers = (a, b) => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       reject(a + b);
+//     }, 2000);
+//   });
+// };
+
+// sumTwoNumbers(1, 2)
+//   .then(soma => {
+//     document.body.innerText = JSON.stringify(soma);
+//   })
+//   .catch(err => {
+//     console.log(err);
+//   });
+
+// fetch('https://api.github.com/users/Igorth')
+//   .then(response => {
+//     response.json().then(body => {
+//       console.log(body);
+//     });
+//   })
+//   .catch(err => {
+//     console.log('---ERR-----');
+//     console.log(err);
+//   });
+
+// fetch('https://api.github.com/users/Igorth')
+//   .then(response => {
+//     return response.json();
+//   })
+//   .then(body => {
+//     console.log(body);
+//   })
+//   .catch(err => {
+//     console.log('---ERR-----');
+//     console.log(err);
+//   });
+
+async function fetchGithubUser() {
+  try {
+    const response = await fetch('https://api.github.com/users/Igorth');
+    const body = await response.json();
+    console.log(body);
+
+    return body.name;
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+const name = fetchGithubUser();
+console.log(name);
+
+fetchGithubUser().then(name => {
+  console.log(name);
+});
