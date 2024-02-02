@@ -1,3 +1,10 @@
+import { sum, PI } from './lib/math';
+import sub from './lib/sub';
+
+console.log(sum(1, 2));
+console.log(PI);
+console.log(sub(1, 2));
+
 // Nullish coalescing operator.
 
 // const age = 0;
