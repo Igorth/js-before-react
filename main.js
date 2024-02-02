@@ -80,28 +80,120 @@
 
 // OPTIONAL CHAINING
 
-const user = {
-  name: 'John',
-  nickname: 'Dier',
-  age: 30,
-  address: {
-    city: 'New York',
-    // state: 'NY',
-    zip: {
-      code: '123456',
-      city: 'New York',
-    },
-    // showFullAddress() {
-    //   return 'ok';
-    // },
-  },
-};
+// const user = {
+//   name: 'John',
+//   nickname: 'Dier',
+//   age: 30,
+//   address: {
+//     city: 'New York',
+//     // state: 'NY',
+//     zip: {
+//       code: '123456',
+//       city: 'New York',
+//     },
+//     // showFullAddress() {
+//     //   return 'ok';
+//     // },
+//   },
+// };
 
-const key = 'state';
+// const key = 'state';
 
-document.body.innerText = user.address?.zip?.code ?? 'N/A';
+// document.body.innerText = user.address?.zip?.code ?? 'N/A';
 
-// So chama essa função caso ela exista
-document.body.innerText = user.address?.showFullAddress?.() ?? 'N/A';
+// // So chama essa função caso ela exista
+// document.body.innerText = user.address?.showFullAddress?.() ?? 'N/A';
 
-document.body.innerText = user.address?.[key] ?? 'N/A';
+// document.body.innerText = user.address?.[key] ?? 'N/A';
+
+////////////////////////////////////////////////////////////////
+
+// MÉTODOS DE ARRAY
+// map, filter, every, some, find, findIndex, reduce
+
+// const array = [1, 2, 3, 4, 5, 6];
+
+// for (const i of array) {
+//   document.body.innerText += i;
+// }
+
+// For Each não retorna um valor
+// array.forEach(item => {
+//   document.body.innerText += item;
+// });
+
+// const newArray = [];
+// array.forEach(item => {
+//   newArray.push(item * 2);
+// });
+// document.body.innerText = JSON.stringify(newArray);
+
+// MAP ///////////////////////////////////////////////////////////////////////
+// sempre retorna um array do tamanho do vector original
+// Transformar o array em um novo array
+// const novoArray = array.map(item => {
+//   if (item % 2 === 0) {
+//     return item * 2;
+//   }
+//   return item;
+// });
+// document.body.innerText = JSON.stringify(novoArray);
+
+// FILTER //////////////////////////////////////////////////////////////////
+//const array = [1, 2, 3, 4, 5, 6];
+
+// const newArray = array.map(item => {
+//   if (item % 2 === 0) {
+//     return item * 2;
+//   }
+//   return item;
+// });
+// document.body.innerText = JSON.stringify(newArray);
+
+// // Retorna uma parte do array
+// const newArray2 = newArray.filter(item => item % 2 !== 0);
+// document.body.innerText = JSON.stringify(newArray2);
+
+// const newArray3 = array.filter(item => item % 2 !== 0).map(item => item * 10);
+// document.body.innerText = JSON.stringify(newArray3);
+
+// EVERY /////////////////////////////////////////////////////////////////
+// Retorna um booleano TRUE or FALSE
+// Se todos os itens satisfazem a condição, retorna TRUE
+
+// const array = [1, 2, 3, 4, 5, 'ig'];
+
+// const allItensAreNumbers = array.every(item => {
+//   return typeof item === 'number';
+// });
+// document.body.innerText = JSON.stringify(allItensAreNumbers);
+
+// SOME /////////////////////////////////////////////////////////////////
+
+// const atLeastOneNumberIsNotNumber = array.some(item => {
+//   return typeof item !== 'number';
+// });
+// document.body.innerText = JSON.stringify(atLeastOneNumberIsNotNumber);
+
+// FIND /////////////////////////////////////////////////////////////////
+// Encontrar um item dentro do array
+// Ele encontrar o primeiro item que satisfaça a condição
+
+// const even = array.find(item => item % 2 === 0);
+// document.body.innerText = JSON.stringify(even);
+
+// FIND INDEX ///////////////////////////////////////////////////////////////
+// Retorna o índice do primeiro item que satisfaça a condição
+// const even = array.findIndex(item => item % 2 === 0);
+// document.body.innerText = JSON.stringify(even);
+
+// REDUCE ///////////////////////////////////////////////////////////////
+// Pegar o array e criar uma nova estrutura de base usando o array
+const array = [1, 2, 3, 4, 5, 6];
+
+const sum = array.reduce((acc, item) => {
+  document.body.innerText += acc + ',' + item + ' ---- ';
+
+  return acc + item;
+}, 0);
+document.body.innerText = JSON.stringify(sum);
