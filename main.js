@@ -42,24 +42,38 @@
 
 // REST OPERATOR
 
+// const user = {
+//   name: 'John',
+//   nickname: 'Dier',
+//   age: 30,
+//   address: {
+//     city: 'New York',
+//     state: 'NY',
+//   },
+// };
+
+// // const { name, nickname, ...rest } = user;
+// // document.body.innerText = JSON.stringify(rest);
+
+// const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const [first, , third, ...rest] = array;
+
+// console.log(JSON.stringify({ first, third }));
+// document.body.innerText = JSON.stringify(rest);
+// document.body.innerText = JSON.stringify({ first, third, rest });
+
+////////////////////////////////////////////////////////////////
+
+// SHORT SINTAX
+
+const name = 'Igor';
+const age = 33;
+
 const user = {
-  name: 'John',
-  nickname: 'Dier',
-  age: 30,
-  address: {
-    city: 'New York',
-    state: 'NY',
-  },
+  name,
+  age,
 };
 
-// const { name, nickname, ...rest } = user;
-// document.body.innerText = JSON.stringify(rest);
-
-const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const [first, , third, ...rest] = array;
-
-console.log(JSON.stringify({ first, third }));
-document.body.innerText = JSON.stringify(rest);
-document.body.innerText = JSON.stringify({ first, third, rest });
+document.body.innerText = JSON.stringify(user);
 
 ////////////////////////////////////////////////////////////////
