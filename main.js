@@ -66,14 +66,42 @@
 
 // SHORT SINTAX
 
-const name = 'Igor';
-const age = 33;
+// const name = 'Igor';
+// const age = 33;
 
-const user = {
-  name,
-  age,
-};
+// const user = {
+//   name,
+//   age,
+// };
 
-document.body.innerText = JSON.stringify(user);
+// document.body.innerText = JSON.stringify(user);
 
 ////////////////////////////////////////////////////////////////
+
+// OPTIONAL CHAINING
+
+const user = {
+  name: 'John',
+  nickname: 'Dier',
+  age: 30,
+  address: {
+    city: 'New York',
+    // state: 'NY',
+    zip: {
+      code: '123456',
+      city: 'New York',
+    },
+    // showFullAddress() {
+    //   return 'ok';
+    // },
+  },
+};
+
+const key = 'state';
+
+document.body.innerText = user.address?.zip?.code ?? 'N/A';
+
+// So chama essa função caso ela exista
+document.body.innerText = user.address?.showFullAddress?.() ?? 'N/A';
+
+document.body.innerText = user.address?.[key] ?? 'N/A';
